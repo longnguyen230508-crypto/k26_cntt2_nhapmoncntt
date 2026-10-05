@@ -1,0 +1,71 @@
+## PHẦN 1: KIẾN TRÚC HỆ ĐIỀU HÀNH (OS ARCHITECTURE)
+
+* **Chức năng và Cơ chế:**
+  * Hoạt động chạy song song 4 ứng dụng (Word, Chrome, VS Code, Portal) thuộc chức năng **Quản lý Tiến trình (Process Management)** và **Quản lý Bộ nhớ (Memory Management)** của Hệ điều hành.
+  * Các phần mềm không xung đột nhờ cơ chế **Đa nhiệm phân chia thời gian (Time-sharing Multitasking)** và **Bộ nhớ ảo (Virtual Memory)** cấp phát vùng nhớ RAM độc lập cho từng tiến trình.
+* **Xử lý khi mở file:**
+  * Thao tác nhấp đôi chuột đi qua lớp **Shell** (Giao diện người dùng) trước. Shell dịch thao tác thành lời gọi hệ thống (**System Call**) để gửi đến Kernel.
+  * Người dùng không thao tác trực tiếp với Kernel để bảo mật hệ thống và tránh các lỗi thao tác gây rập/sập (Crash) OS.
+
+---
+
+## PHẦN 2: CÂY THƯ MỤC VÀ Ổ ĐĨA (DIRECTORY TREE)
+
+Xét đường dẫn cũ: `D:\Nam1\HocKy1\MonHoc\CongNgheThongTin\BaiTapLon\Session02\BaoCaoCuoiKy\Chuong1\Hinh anh\anh 1.jpg`
+
+* **Root Directory (Thư mục gốc):** `D:\`
+* **Parent Directory (Thư mục cha trực tiếp):** `Hinh anh`
+* **Vai trò của file:** File `anh 1.jpg` đóng vai trò là **"Lá" (Leaf)** trong mô hình cây.
+* **Rủi ro khi lưu ở Desktop/Downloads (`C:\Users\...`):**
+  1. Dễ mất sạch dữ liệu khi hệ điều hành Windows gặp lỗi cần Format hoặc cài lại ổ `C:`.
+  2. Làm tràn bộ nhớ đĩa hệ thống và làm chậm tốc độ khởi động/render giao diện của OS.
+* **Nơi lưu chuẩn:** Phân vùng đĩa lưu trữ dữ liệu riêng biệt (ví dụ: `D:\` hoặc `E:\`).
+
+---
+
+## PHẦN 3: ĐƯỜNG DẪN PATH (ABSOLUTE AND RELATIVE PATH)
+
+* **Absolute Path (Đường dẫn tuyệt đối) đầy đủ:**
+  ```text
+  D:\Nam1\HocKy1\MonHoc\CongNgheThongTin\BaiTapLon\Session02\BaoCaoCuoiKy\Chuong1\Hinh anh\anh 1.jpg
+Relative Path (Đường dẫn tương đối) chèn logo.png vào report.html:
+
+Plaintext
+assets/logo.png
+Giải thích kỹ thuật:
+Relative Path liên kết tài nguyên dựa trên cấu trúc thư mục nội bộ của dự án. Khi nén và chuyển thư mục BaiTapLonIT101 sang máy khác, cấu trúc tương quan giữa report.html và assets/logo.png không thay đổi, giúp tránh lỗi 404 File Not Found.
+
+PHẦN 4: QUY TẮC ĐẶT TÊN CHUẨN (FILE NAMING STANDARD)
+Tên file gốc: Báo cáo bài tập lớn IT101 (bản cuối) v2.docx
+
+Chuẩn hóa theo kebab-case:
+
+Plaintext
+bao-cao-bai-tap-lon-it101-v2.docx
+PHẦN 5: TỔ CHỨC VÀ DỌN DẸP Ổ ĐĨA
+Phân tích lỗi: Đường dẫn cũ lồng tới 9 cấp thư mục, vi phạm nghiêm trọng Quy tắc 3 Cấp Thư Mục và gây khó khăn cho việc quản lý/truy vết file.
+
+Thiết kế lại cấu trúc thư mục chuẩn (Mô hình 4 Trụ Cột):
+
+Plaintext
+D:\01_HocTap\IT101_CongNgheThongTin\BaiTapLon\
+├── report.html
+├── pages/
+│   └── appendix.html
+└── assets/
+    ├── logo.png
+    └── anh-1.jpg
+Đường dẫn chuẩn mới của file ảnh:
+
+Plaintext
+D:\01_HocTap\IT101_CongNgheThongTin\BaiTapLon\assets\anh-1.jpg
+PHẦN 6: ĐUÔI FILE VÀ MÃ ĐỘC TIỀM ẨN (FILE EXTENSION HAZARD)
+Phân tích mối đe dọa: File de-thi-dap-an.pdf khi bị ẩn đuôi file có thể mang kỹ thuật mạo danh Double Extension. File thực tế có thể chứa mã độc thực thi như de-thi-dap-an.pdf.exe.
+
+Các bước kiểm tra an toàn trên Windows File Explorer:
+
+Diff
+- BƯỚC 1: Mở cửa sổ Windows File Explorer.
+- BƯỚC 2: Chọn thẻ View trên thanh công cụ.
+- BƯỚC 3: Tích chọn ô File name extensions (Hiện đuôi file mở rộng).
+- BƯỚC 4: Xóa ngay lập tức nếu thấy đuôi thật dạng .exe, .vbs, .bat hoặc .scr.
