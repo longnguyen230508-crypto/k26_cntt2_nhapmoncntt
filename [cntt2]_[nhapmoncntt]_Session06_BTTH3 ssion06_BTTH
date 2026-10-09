@@ -1,0 +1,13 @@
+
+
+## **Yêu cầu nghiệp vụ**
+
+- Tạo cây thư mục lồng nhau `smart-farm\data\logs` và `smart-farm\code` chỉ bằng **duy nhất 1 dòng lệnh** PowerShell.
+--> mkdir smart-farm\data\logs; mkdir smart-farm\code
+- Tạo cùng lúc 3 file cấu hình: `config.json`, `sensors.py`, `.env` (file ẩn) bằng **1 dòng lệnh** PowerShell.
+(file ẩn đuôi .env để tên là abc.env)
+--> new-item config.json, sensors.py, abc.env
+- Sao chép toàn bộ thư mục `code` sang `backup\code_v1` (bao gồm cả nội dung bên trong).
+--> mkdir backup\code_v1
+--> cd smart-farm
+--> cp -r code backup\code_v1
