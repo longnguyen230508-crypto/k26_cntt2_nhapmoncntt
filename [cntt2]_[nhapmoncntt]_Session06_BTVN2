@@ -1,0 +1,13 @@
+
+lệnh tạo file theo bối cảnh bằng windows (PowerShell)
+thư mục hiện tại: `/home/OrderTech/`
+[Lệnh gì?] drink_module (Để tạo thư mục tên là drink_module)
+-->mkdir drink_module
+
+
+[Lệnh gì?] drink_module (Để di chuyển vào thư mục vừa tạo)
+-->cd drink_module
+
+
+[Lệnh gì?] coffee.txt tea.txt (Để tạo 2 file trống tên là coffee.txt và tea.txt cùng lúc)
+-->new-item coffee.txt, tea.
