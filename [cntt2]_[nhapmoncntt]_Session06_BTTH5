@@ -1,0 +1,10 @@
+sơ đồ luồng IPO:
+1. input: nhận các loại  trong downloads
+2. process: định dạng files: .png, .jpg, .py, .tmp
+3. output: phân loại ,di chuyển và xóa file
+- .png, .jpg -> media
+--> mv [file].png media; mv [file].jpg media 
+- .py -> scripts
+--> mv [file].jpg scripts
+- .tmp -> xóa 
+--> rm [-r] [file].
