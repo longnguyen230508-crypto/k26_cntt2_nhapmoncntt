@@ -1,0 +1,12 @@
+## nhật kí tạo file trên powershell:
+mkdir smart-farm/bin; mkdir smart-farm/config; mkdir smart-farm/data 
+cd .\smart-farm\; cd config 
+New-Item file-an.env 
+[ giả sử Public/template.ps1 đã được tạo trước đó từ home]
+cd ~; cd Public
+mv .\template.ps1 pump_control.ps1; cp pump_control.ps1 ../smart-farm/bin
+cd ~; cd smart-farm; ls
+
+4. nếu gặp lỗi - ***Access to the path is denied*** thì 
+chuột trái vào icon powershell ở thanh công cụ, chọn run as administrators
+-> code như bình 
