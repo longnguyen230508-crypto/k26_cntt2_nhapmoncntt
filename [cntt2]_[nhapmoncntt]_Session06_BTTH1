@@ -1,0 +1,17 @@
+[cntt2]_[nhapmoncntt]_Session06_BTTH1
+
+Phần 1:
+code của Nam:
+mkdir Smart Farm Project
+cd Smart Farm Project
+mkdir src/sensors/temperature
+lỗi sai:
+
+-thư mục smart farm project của Nam đã xuất hiện ở trong máy (...already exists as a file or…)
+
+-[Smart Farm Project] của Nam sử dụng khoảng cách (máy sẽ coi là kí tự lệnh đặc biệt)  máy sẽ báo lỗi. đề xuất: Nam nên sử dụng dấu “, _ khoặc - để đặt tên.
+Phần 2:
+chuỗi lệnh đề xuất trên PowerShell: 
+mkdir “Smart Farm Project 2”
+cd “Smart Farm Project 2”
+mkdir src/sensors/temperature
