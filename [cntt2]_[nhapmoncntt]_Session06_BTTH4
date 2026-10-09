@@ -1,0 +1,18 @@
+
+1. So Sánh Hai Giải Pháp
+Đường dẫn tuyệt đối (`C:\Users\An-K26\...`)
+-Dài, cố định chính xác toàn bộ vị trí từ ổ đĩa gốc. 
+-Tính di động :Kém, Khi chuyển dự án sang máy khác.
+chương trình dễ bị lỗi `FileNotFoundError` nếu tên user (`An-K26`) hoặc cấu trúc ổ đĩa (`C:`, `D:`) thay đổi.
+
+Đường dẫn tương đối (`../data/logs.csv`) 
+-Ngắn gọn, tính từ vị trí thư mục hiện tại.
+-tính di động :Cao, Dự án có thể chạy trên bất kỳ máy nào mà không bị lỗi, miễn là giữ nguyên cấu trúc thư mục nội bộ. 
+
+2. Lựa Chọn Giải Pháp Tối Ưu
+Nên ưu tiên sử dụng Đường dẫn tương đối (`../data/logs.csv`)
+
+- Ý nghĩa của ký hiệu `..`
+`..`: Đại diện cho **thư mục cha (Parent Directory)** — tức là lùi lại một cấp thư mục so với vị trí hiện tại.
+`/`: Dấu phân cách giữa các thư mục.
+`../data/logs.csv`: Lùi ra khỏi thư mục chứa script hiện tại 1 cấp -> Đi vào thư mục `data` -> Trỏ đến file `logs.
