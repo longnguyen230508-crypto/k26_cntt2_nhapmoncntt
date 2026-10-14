@@ -1,0 +1,12 @@
+Phần 1: Lập bảng so sánh hai toán tử
+|                                                                 |  toán tử >                                                                 |  toán tử >>
+| Cơ chế hoạt động trong PowerShell                               | -Tạo mới tệp hoặc xóa sạch toàn bộ nội dung cũ đang có trong tệp,          |  -Giữ nguyên nội dung cũ và chèn thêm dữ liệu mới vào cuối tệp hiện có.
+|                                                                 |  sau đó ghi dữ liệu mới hoàn toàn từ đầu vào                               |
+| Rủi ro mất dữ liệu.                                             | -Nếu An chạy lệnh này vào cuối tháng khi báo cáo đã tích lũy 30 ngày,      |  -An toàn hơn khi cần lưu trữ tích lũy theo thời gian vì không làm mất dữ liệu cũ.
+|                                                                 |  toàn bộ dữ liệu cũ sẽ bị xóa sạch và chỉ còn lại dữ liệu của lần chạy cuối|
+| Ngữ cảnh sử dụng thực tế (Ca sáng vs Theo dõi 24/7).            | -Phù hợp cho việc tạo báo cáo mới từ đầu ,                                 |  -lưu vết sự cố phát sinh rải rác trong ngày mà không làm mất lịch sử cũ.
+|                                                                 |  chạy test nhanh, hoặc tạo tệp cấu hình mới.                               |
+| Encoding file đầu ra (dựa trên phần "Kiến thức mở rộng" ở mục 3)| -sử dụng UTF-16                                                            |  -sử dụng UTF-16
+Phần 2:
+- lựa chọn tối ưu là >> vì :
++ đảm bảo tính an toàn dữ liệu: dữ liệu cũ không mất đi, có thể tái sử dụng nếu dữ liệu mới gặp rủi ro
