@@ -1,0 +1,9 @@
+Phần 1:
+- lệnh cat là alias của get-content trên powershell nên vì thế bạn đồng nghiệp gõ lệnh cat server_log_800MB.log trên cmd ,máy báo lỗi comment not found 
+- file server_log_800MB.log là một file nặng 800mb, việc mở file bằng trình soạn thảo giao diện đồ họa (GUI) gây đơ máy, tràn bộ nhớ ram 
+-Trong PowerShell, lệnh cat vẫn hoạt động bình thường là do cơ chế Alias (Bí danh) được tích hợp sẵn trong hệ thống vì vậy gõ cat trong PowerShell, hệ thống sẽ tự động dịch nó thành lệnh chuẩn Get-Content
+Phần 2:
+-lệnh cuẩn để xem toàn bộ nd tệp là:
+> cat server_log_800MB.log ( khoặc get-content server_log_800MB.log)
+-lệnh chỉ xem 10 dòng cuối là:
+> cat -tail server_log_800MB.log (khoặc get-content -tail server_log_800MB.log)
