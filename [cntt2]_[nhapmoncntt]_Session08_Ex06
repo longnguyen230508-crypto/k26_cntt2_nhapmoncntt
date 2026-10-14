@@ -1,0 +1,21 @@
+Phần 1: 
+-đoạn mã do ai cung cấp cực kì huy hiểm vì Remove-Item -Path "C:\*" -Recurse -Force Chỉ định phạm vi xóa bỏ là toàn bộ các tệp và thư mục gốc nằm ở ổ đĩa bao gồm cả các thư mục cốt lõi của hệ thống
++ -path : chỉ định phạm vi thực thi lệnh lên thư mục 
++ -recurse : mở rộng tác động lên các thư mục con
++ -Force : ép thực thi lệnh mà không có cảnh báo
+- hậu quả: nếu chạy lệnh do ai cấp : Remove-Item -Path "C:\*" -Recurse -Force thì máy tính sẽ xóa sạch toàn bộ dữ liệu trong ổ c:\ bao gồm cả các thư mục hệ thống và dữ liệu người dùng đã lưu
+--> máy sẽ hiển thị màn hình xanh (không thể phục hồi, trừ khi phải cài lại hệ điều hành) khoặc thậm chi hỏng vĩnh viễn
+- 3 nguyên tắc vàng: 
++ Không bao giờ tin tưởng tuyệt đối mã AI sinh ra 
++ Kiểm tra kỹ phạm vi tác động của câu lệnh
++ Thử nghiệm trên môi trường an toàn ( vd muốn cài lại win khoặc thử trên máy thử nghiệm chuyên dụng)
+phần 2:
+- Viết lại tệp `safe_cleanup.ps1`:
+> Set-Location -Path "C:\SmartOrchidFarm\logs"
+> Get-Content -Path "system.log" | Select-String "WARNING" | Out-File -FilePath "issues.txt"
+> Remove-Item -Path "*.tmp" -Force
+Phần 3 :
+- cách  kiểm tra kết quả trên **PowerShell** để xác nhận script đã chạy đúng và an toàn
+> Get-Content issues.txt
+> Get-ChildItem "*.tmp"
+--> nếu powershell báo lỗi k tìm thấy file thì xác nhận chương trình chạy ổn
