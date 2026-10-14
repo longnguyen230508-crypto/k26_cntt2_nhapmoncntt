@@ -1,0 +1,9 @@
+Phần 1: 
+- code của an: Get-ChildItem -Recurse -Filter "*404*"
++ việc an sử sụng lệnh get-childitem, máy sẽ không hiển thị thông tin gì vì get-childitem là lệnh hỉ tìm kiếm danh sách file và thư mục con.
++ an dùng sai cờ: -recurse,-filter mà phải dùng cờ -path để khoanh vùng tìm kiếm file, -Pattern để chỉ định tìm kiếm từ 404|ERROR
+- bản chất khác biệt: 
++ get-childitem : Chỉ quét tên file và không đọc nội dung bên trong -> Trả về cho An lỗi trống
++ select-string : Tìm kiếm nội dung chính xác bằng văn bản trong file -> Chuyên dùng để quét từ khóa “ERROR, 404’” ẩn bên trong file log và trả về kèm số dòng. 
+Phần 2:
+- code hoàn chỉnh: Select-String -Path "access.log" -Pattern "ERROR"
