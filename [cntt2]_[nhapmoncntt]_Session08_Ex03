@@ -1,0 +1,8 @@
+- mô hình Pipeline: Đọc tệp ➔ Lọc từ khóa ➔ Đếm kết quả.
+đọc tệp: Select-String -Path "access.log"
+- tìm và đọc tệp access.log
+Lọc từ khóa:  -Pattern "TIMEOUT"; Where-Object { $_.Line -notmatch "NOT TIMEOUT" }
+- dùng Where-Object { $_ -notmatch "NOT TIMEOUT" } để bỏ các dòng "NOT TIME OUT" giữ lại đúng các dòng chứa "TIMEOUT"
+Đếm kết quả: ().Count
+-> (Select-String -Path "access.log" -Pattern "TIMEOUT" | Where-Object { $_.Line -notmatch "NOT TIMEOUT" }).Count
+- đếm kết quả các dòng chứa "TIMEOUT"
