@@ -1,0 +1,20 @@
+Phần 1
+Header block : 1. thông tin script - #"=== HE THONG TU DONG LOC LOG ===" 
+Biến cấu hình : Khai báo đường dẫn tệp log đầu vào và tệp báo cáo đầu ra bằng cú pháp biến bắt đầu bằng dấu $duong_dan_log = "sever.log"
+Thông báo tiến trình : Sử dụng Write-Host để in trạng thái trực tiếp ra màn hình Terminal
+Logic xử lý cốt lõi : Kết hợp ghi tiêu đề vào báo cáo, sau đó dùng Get-Content đọc tệp log truyền qua pipeline đến Select-String để lọc lỗi 404 và ghi nối kết quả bằng toán tử >>
+Phần 2 : 
+- tạo tệp .ps1 : 
+<#
+    Script tự động lọc lỗi 404 từ file log hệ thống và lưu vào báo cáo hàng ngày.
+#>
+$logfile = "server.log"
+$ReportFile = "daily_report.txt"
+Write-Host "=== Bat dau qua trinh xu ly log ==="
+Write-Host "Dang quet tim kiem loi 404 tu tep $LogFile..." 
+"=== HE THONG TU DONG LOC LOG ===" >> $ReportFile
+"Thoi gian chay: $(Get-Date)" >> $ReportFile
+"----------------------------------------" >> $ReportFile
+
+Get-Content -Path $LogFile | Select-String "404" >> $ReportFile
+Write-Host "Hoan tat! Ket qua da duoc luu vao $ReportFile"
