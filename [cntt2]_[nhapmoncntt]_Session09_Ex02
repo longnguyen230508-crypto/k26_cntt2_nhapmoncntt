@@ -1,0 +1,21 @@
+# Phần 1 #
+## 3 lỗi cú pháp trong đoạn mã trên là ##
+```
+- đoạn mã của bạn sinh viên: [Logo PTIT] (https://ptit.edu.vn/logo.png) có dấu cách ở giữa,
+việc viết nhầm sẽ khiến bọo dịch hiểu nhầm đây là văn bản kèm link
+- phân cấp tiêu đề lộn xộn, mở dầu bằng đấu # tiêu đề 1 rồi đê s ### giới thiệu dự án rồi lại đến ## mục tiêu
+, markdown phân cấp tiêu đề dựa theo số lượng #, việc nhẩy cóc như vậy sẽ khiến văn bản bị lỗi hiển thị chữ to, nhỏ bất thường
+- tiêu đề thiếu khoảng trống ###Giới thiệu dự án, theo tiêu chuẩn markdown sẽ là ### giới thiệu dự án ,nếu không
+làm vậy phông chữ sẽ không viết hoa mà giữ nguyên
+```
+# phần 2 #
+```
+3
+# tiêu đề 1 #
+## giới thiệu sự án 
+![logo PTIT](https://ptit.edu.vn/logo.png)
+**đây là đoạn văn bản in đậm**
+## Mục tiêu
+- quản lý sinh viên
+- quản lý môn học
+``` 
