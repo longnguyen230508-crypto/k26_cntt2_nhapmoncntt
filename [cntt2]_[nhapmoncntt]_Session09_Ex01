@@ -1,0 +1,24 @@
+# phần 1 #
+## 2 sai lầm của nam ##
++ nam cho rằng file word phù hợp để lưu trữ và quản lý mã nguồn, không được tối ưu để theo dõi sự thay đổi nhỏ của dòng lệnh
+vì thế khi dùng file docx, git không thể so sánh từng từ hay từng câu dẫ đến việc mỗi khi có ai sửa dù chỉ 1 dấu phẩy, hệ thống sẽ báo lỗi xung đột.
++  nam nhầm lẫn giữa tính năng soản thảo văn bản trực quan và tính năng hiển thị tài liệu trên nền tảng quảnlý mã nguồn 
+## lí do markdown lại nhẹ hơn ##
++ markdown chỉ lưu trữ các ký tự văn bản thân túy không kèm theo các dòng lệnh ẩn cồng kềnh khiến cho file cực kì nhẹ
++ nếu gặp sự cố mạng làm mất vài byte dữ liệu, phần lớn nội dung file vẫn được dữ nguyên và đọc được không như định dang file .docx, toàn bộ tệp tin sẽ bị lỗi và không thể mở được
+# phần 2 #
+> nỗi dung dự án được đổi sang markdown:
+# Giới thiệu Dự án Nhóm - Nhập môn Công nghệ Thông tin
+
+## 1. Thông tin chung
+* **Môn học:** Nhập môn Công nghệ Thông tin 
+* **Thành viên nhóm:** Nhóm phát triển dự án CNTT2
+
+## 2. Mục tiêu dự án
+* Xây dựng hệ thống quản lý và tài liệu hóa quy trình học tập.
+* Ứng dụng các công cụ quản lý phiên bản (Git/GitHub) vào làm việc nhóm hiệu quả.
+* Chuẩn hóa cấu trúc tài liệu bằng định dạng Markdown.
+
+## 3. Công nghệ sử dụng
+* **Quản lý mã nguồn:** Git, GitHub
+* **Định dạng tài liệu:** Markdown (`.md`)
